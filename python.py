@@ -87,6 +87,18 @@ def heapSort(arr):
         heapify(arr, n, n - 1, i + 1)
     return arr
 
+# Two Number Sum
+
+def twoNumberSum(arr, tarSum):
+    storage = set(num for num in arr)
+
+    for num in arr:
+        tar = tarSum - num
+        if tar in storage and tar is not num:
+            return [num, tar]
+
+    return []
+
 
 
 
