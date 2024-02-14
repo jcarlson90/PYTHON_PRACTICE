@@ -66,6 +66,27 @@ def binarySearch(arr, tar):
         
     return -1
 
+# Heaps Sort
+def heapSort(arr):
+    n = len(arr)
+    def heapify(arr, N, i, m):
+        mini = i
+        li, ri = 2 * i - N, 2 * i - N - 1
+        if li >= m and arr[mini] > arr[li]: mini = li
+        if ri >= m and arr[mini] > arr[ri]: mini = ri
+
+        if mini != i:
+            arr[i], arr[mini] = arr[mini], arr[i]
+            heapify(arr, N, mini, m)
+
+    for i in range(n - n // 2, n):
+        heapify(arr, n, i , 0)
+
+    for i in range(n):
+        arr[i], arr[n-1] = arr[n - 1], arr[i]
+        heapify(arr, n, n - 1, i + 1)
+    return arr
+
 
 
 
