@@ -38,6 +38,43 @@ if x < y:
 
 ##
     
+counter = 0
+while (counter < 10):
+    print(counter)
+    counter += 1
+
+# Palindrome
+def isPalindrome(string):
+    reversedString = ""
+    for i in reversed(range(len(string))):
+        reversedString += string[i]
+        return stirng == reversedString
+    
+
+# Binary Search Tree
+def binarySearch(arr, tar):
+    left = 0
+    right = len(arr) - 1
+    while left <= right:
+        mid = (left+right) // 2
+        if tar < arr[mid]:
+            right = mid -1
+        elif tar > arr[mid]:
+            left = mid + 1
+        elif arr[mid] == tar:
+            return mid
+        
+    return -1
+
+
+
+
+
+
+
+
+ 
+    
 
 
 
