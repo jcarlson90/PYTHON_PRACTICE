@@ -44,6 +44,7 @@ while (counter < 10):
     counter += 1
 
 # Palindrome
+
 def isPalindrome(string):
     reversedString = ""
     for i in reversed(range(len(string))):
@@ -52,6 +53,7 @@ def isPalindrome(string):
     
 
 # Binary Search Tree
+
 def binarySearch(arr, tar):
     left = 0
     right = len(arr) - 1
@@ -67,6 +69,7 @@ def binarySearch(arr, tar):
     return -1
 
 # Heaps Sort
+
 def heapSort(arr):
     n = len(arr)
     def heapify(arr, N, i, m):
@@ -98,6 +101,45 @@ def twoNumberSum(arr, tarSum):
             return [num, tar]
 
     return []
+
+# Depth First Search
+
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def addChild(self, name):
+        self.children.append(Node(name))
+        return self
+
+    def depthFirstSearch(self, array):
+        array.append(self.name)
+        for child in self.children:
+            child.depthFirstSearch(array)
+        return(array)
+    
+
+# Breadth First Search
+
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def addChild(self, name):
+        self.children.append(Node(name))
+        return self
+
+    def breadthFirstSearch(self, array):
+        queue = [self]
+        while len(queue) > 0:
+            current = queue.pop(0)
+            array.append(current.name)
+            for child in current.children:
+                queue.append(child)
+        return array
+
 
 
 
